@@ -199,6 +199,13 @@ from sklearn.preprocessing import StandardScaler    #引入缩放的包
 其中：
 ![{h_\theta }(x) = \frac{1}{{1 + {e^{ - x}}}}](http://chart.apis.google.com/chart?cht=tx&chs=1x0&chf=bg,s,FFFFFF00&chco=000000&chl=%7Bh_%5Ctheta%20%7D%28x%29%20%3D%20%5Cfrac%7B1%7D%7B%7B1%20%2B%20%7Be%5E%7B%20-%20x%7D%7D%7D%7D)
 - 为什么不用线性回归的代价函数表示，因为线性回归的代价函数可能是非凸的，对于分类问题，使用梯度下降很难得到最小值，上面的代价函数是凸函数
+- 均方差距离
+
+
+- Jsqrt(w)=∑yi(1−p(xi;w))2+(1−yi)(0−p(xi;w))2
+- 用均方差作为损失函数，当模型完全预估错误时（y=1, p=0; 或y=0， p=1），损失是1。预估正确时，损失是0。错误值离正确值的“距离”相对较小，区分度不大。
+
+- 另外，上面的损失函数相对θ并非是凸函数，而是有很多极小值（local minimum）的函数。因此，很多凸优化的算法（如梯度下降）无法收敛到全局最优点。
 - ![{ - \log ({h_\theta }(x))}](http://chart.apis.google.com/chart?cht=tx&chs=1x0&chf=bg,s,FFFFFF00&chco=000000&chl=%7B%20-%20%5Clog%20%28%7Bh_%5Ctheta%20%7D%28x%29%29%7D)的图像如下，即`y=1`时：
 ![enter description here][2]
 
